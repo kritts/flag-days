@@ -9,7 +9,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform:translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
         background-color: black;
       }
       h1 { 
@@ -27,22 +27,26 @@
       ga('create', 'UA-100891929-1', 'auto');
       ga('send', 'pageview');
 
+      // remember months are 0 indexed
       function updateText() {
         var key_to_description = {
-            "5 19": "May Ball!",
-            "5 14": "Honorary Degrees!",
-            "5 26": "Society of St. Radegund!",
-            "5 29": "Degree Day!",
-            "6 1": "Degree Day!",
-            "6 6": "University Open Day!",
-            "6 7": "University Open Day!",
-            "6 22": "Degree Congregation!",
-            "7 7": "Name of Jesus!",
-            "8 23": "College Open Day!",
-            "8 30": "JCCS Dinner!",
+            "9 10": "HRH The Earl of Wessex Visit!",
+            "9 21": "Degree congregation!",
+            "10 8": "Members' 50th Anniversary Lunch!",
+            "10 13": "Members' 50th Anniversary Lunch!",
+            "11 8": "Audit Feast!",
+            "0 12": "Reunion of Old Members!",
+            "0 27": "Degree congregation!",
+            "1 6": "Queen's Accession!",
+            "1 7": "1496 Society Lunch!",
+            "1 9": "St Radegund!",
+            "1 25": "2015 Committee Lunch!",
+            "2 16": "Commemoration of Benefactors!",
+            "2 23": "Reunion of Old Members!"
         };
         var today = new Date();
         key = today.getMonth() + " " + today.getDate();
+        console.log(key);
 
         if (key in key_to_description) {
           document.getElementById('date').innerHTML = "YES!"
@@ -59,7 +63,7 @@
     </script>
   </head>
   <body onload="updateText();">
-    <h1 id="date">No.</h1>
+    <h1 id="date">No</h1>
     <h2 id="desc"></h2>
   </body>
 </html>
